@@ -1,10 +1,23 @@
 import Link from '../components/Link';
 import Layout from '../components/Layout';
+import React from 'react';
 
-const AboutPage = () => (
+type AboutProps = {
+    desc: string;
+};
+
+const SampleEl = (props: AboutProps): React.ReactElement => {
+    return (
+        <>
+            <h2>{props.desc}</h2>
+        </>
+    );
+};
+
+const AboutPage = (props: AboutProps): React.ReactElement => (
     <Layout title="About | Next.js + TypeScript Example">
         <h1>About</h1>
-        <p>This is the about page</p>
+        <SampleEl desc={'1234'} />
         <p>
             <Link href="/">
                 <a>Go home</a>
